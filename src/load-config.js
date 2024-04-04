@@ -46,7 +46,7 @@ if (process.env.ACTUAL_CONFIG_PATH) {
 
 /** @type {Omit<import('./config-types.js').Config, 'mode' | 'dataDir' | 'serverFiles' | 'userFiles'>} */
 let defaultConfig = {
-  port: 5006,
+  port: process.env.PORT || 3000,
   hostname: '::',
   webRoot: path.join(
     projectRoot,
@@ -85,7 +85,7 @@ if (process.env.NODE_ENV === 'test') {
 
 const finalConfig = {
   ...config,
-  port: +process.env.ACTUAL_PORT || +process.env.PORT || config.port,
+  port:process.env.PORT || 3000,
   hostname: process.env.ACTUAL_HOSTNAME || config.hostname,
   serverFiles: process.env.ACTUAL_SERVER_FILES || config.serverFiles,
   userFiles: process.env.ACTUAL_USER_FILES || config.userFiles,
