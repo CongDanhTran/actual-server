@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node app",
     "lint": "eslint . --max-warnings 0",
-    "build": "tsc",
+    "build": "npm install",
     "test": "NODE_ENV=test NODE_OPTIONS='--experimental-vm-modules --trace-warnings' jest  --coverage",
     "types": "tsc --noEmit --incremental",
     "verify": "yarn -s lint && yarn types",
